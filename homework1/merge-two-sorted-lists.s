@@ -29,16 +29,16 @@ setLinked:
     addi  t0, t0, 8
     sw    t0, -4(t0)
     sw    x0,  4(t0)
-    lw    s2,  0(t0)     #check use
-    lw    s3,  4(t0)     #check use
+    lw    s2,  0(t0)     # for checking
+    lw    s3,  4(t0)     # for checking
     
     la    t1, list5
     sw    t1, -4(t1)
     addi  t1, t1, 8
     sw    t1, -4(t1)
     sw    x0,  4(t1)
-    lw    s4,  0(t1)     #check use
-    lw    s5,  4(t1)     #check use
+    lw    s4,  0(t1)     # for checking
+    lw    s5,  4(t1)     # for checking
     
     la    a0, list1     # a0 = &llist
     la    a1, list4     # a1 = &rlist
