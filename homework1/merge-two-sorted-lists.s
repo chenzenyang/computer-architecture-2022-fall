@@ -64,17 +64,17 @@ loop:
     sw    s9, -8(s0)    # indir = &rlist
     
 lSoE:
-    lw    s10, -8(s0)
-    lw    s10, 0(s10)   # s10 = *indir
+    lw    t4, -8(s0)
+    lw    s10, 0(t4)   # s10 = *indir
     lw    s11, -4(s0)   # s11 = sorted
     sw    s10, 0(s11)   # *sorted = *indir
     
     addi  t3, s10, 4
     sw    t3, -4(s0)    # sorted = &(*sorted)->next
-    
-    lw    t4, -8(s0)    # t4 = indir
-    lw    t5, 0(t4)     # t4 = *indir
-    lw    t5, 4(t5)
+
+
+
+    lw    t5, 4(s10)
     sw    t5, 0(t4)
     
     lw    a0, -12(s0)
