@@ -1,6 +1,6 @@
-.data   
+.data         
 list1:
-    .word 1, 0           # start 0x4
+    .word 1, 0            # not start from 0
 list2:
     .word 2, 0
 list3:
@@ -56,9 +56,8 @@ loop:
     
     lw    s6, 0(a0)
     lw    s7, 0(a1)
-    slt   t2, s7, s6    # 0: left is small or equ
-
     addi  s8, s0, -12
+    slt   t2, s7, s6    # 0: left is small or equ
     sw    s8, -8(s0)    # indir = &llist
     beq   t2, x0, lSoE
     addi  s9, s0, -16
@@ -109,3 +108,4 @@ end:
     ecall
     li    a7, 10
     ecall
+    
