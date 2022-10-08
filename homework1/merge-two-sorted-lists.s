@@ -65,8 +65,8 @@ loop:
     
 lSoE:
     lw    t4, -8(s0)
-    lw    s10, 0(t4)   # s10 = *indir
     lw    s11, -4(s0)   # s11 = sorted
+    lw    s10, 0(t4)   # s10 = *indir
     sw    s10, 0(s11)   # *sorted = *indir
     
     addi  t3, s10, 4
