@@ -1,6 +1,7 @@
 .data
 list0:
     .word 99, 2            # no started from 0
+    
 list1:
     .word 1, 0
 list2:
@@ -14,6 +15,7 @@ list5:
     .word 3, 0
 list6:
     .word 4, 0
+    
 strLink:
     .string " -> "
 strNull:
@@ -73,8 +75,6 @@ lSoE:
     addi  t3, s10, 4
     sw    t3, -4(s0)    # sorted = &(*sorted)->next
     
-#   lw    t4, 0(t3)     # error
-#   sw    t4, 0(s10)    # error
     lw    t4, -8(s0)    # t4 = indir
     lw    t5, 0(t4)     # t4 = *indir
     lw    t5, 4(t5)
@@ -111,13 +111,3 @@ end:
     ecall
     li    a7, 10
     ecall
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
