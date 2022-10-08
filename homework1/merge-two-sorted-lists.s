@@ -1,9 +1,6 @@
 .data
-list0:
-    .word 99, 2            # no started from 0
-    
 list1:
-    .word 1, 0
+    .word 1, 0           # no started from 0
 list2:
     .word 2, 0
 list3:
@@ -60,6 +57,7 @@ loop:
     lw    s6, 0(a0)
     lw    s7, 0(a1)
     slt   t2, s7, s6    # 0: left is small or equ
+    
     addi  s8, s0, -12
     sw    s8, -8(s0)    # indir = &llist
     beq   t2, x0, lSoE
