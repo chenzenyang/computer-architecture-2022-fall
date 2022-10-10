@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdint.h>
+
 struct ListNode {
     int val;
     struct ListNode *next;
@@ -16,5 +18,6 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
     }
 
     *sorted = (list1 ? list1 : list2);
+    *sorted = (struct ListNode *) ((uintptr_t) list1 |(uintptr_t) list2);
     return list;
 }
