@@ -1,6 +1,6 @@
 .data         
 list1:
-    .word 1, 0            # not start from 0
+    .word 1, 0         # not start from 0
 list2:
     .word 2, 0
 list3:
@@ -24,15 +24,15 @@ setLinked:
     addi  t0, t0, 8
     sw    t0, -4(t0)
     sw    x0,  4(t0)
-    lw    s2,  0(t0)     # for checking
-    lw    s3,  4(t0)     # for checking
+    lw    s2,  0(t0)    # for checking
+    lw    s3,  4(t0)    # for checking
     la    t1, list5
     sw    t1, -4(t1)
     addi  t1, t1, 8
     sw    t1, -4(t1)
     sw    x0,  4(t1)
-    lw    s4,  0(t1)     # for checking
-    lw    s5,  4(t1)     # for checking
+    lw    s4,  0(t1)    # for checking
+    lw    s5,  4(t1)    # for checking
     la    a0, list1     # a0 = &llist
     la    a1, list4     # a1 = &rlist
     li    a2, 6
@@ -57,7 +57,7 @@ loop:
 lSoE:
     lw    t4, -8(s0)
     lw    s11, -4(s0)   # s11 = sorted
-    lw    s10, 0(t4)   # s10 = *indir
+    lw    s10, 0(t4)    # s10 = *indir
     sw    s10, 0(s11)   # *sorted = *indir
     addi  t3, s10, 4
     sw    t3, -4(s0)    # sorted = &(*sorted)->next
