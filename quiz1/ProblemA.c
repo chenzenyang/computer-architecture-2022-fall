@@ -1,10 +1,10 @@
-/* 
+/*
 link : https://hackmd.io/@sysprog/arch2022-quiz1.
 
 Popular programming journal Obscure C Techniques for Experts has published a novel way to save space for a doubly-linked list program. Instead of storing
 two pointers (one next and one previous), this new technique stores a single value: the XOR of previous and next pointers. Check Wikipedia XOR linked list for details.
 
-The below code (filename xorlist.c) implements XOR linked list: 
+The below code (filename xorlist.c) implements XOR linked list:
 */
 
 /*
@@ -32,9 +32,9 @@ A01, A02, A03, and A04 are C expressions. You must obey the following rules when
 - Do necessary casting to eliminate compilation warnings.
 - The intptr_t and uintptr_t types are extremely useful for casting pointers when you want to do address arithmetic.
     You shall consider to explicitly use the types provided by <inttypes.h>.
-- Follow the consistent coding style. 
+- Follow the consistent coding style.
     That is, we prefer (xorlist_t *) (*head)->link to (xorlist_t*)(*head)->link or (xorlist_t *)(*head)->link.
-    Be aware of the spaces! Details determine success or failure. 
+    Be aware of the spaces! Details determine success or failure.
 */
 
 #include <stdint.h>
@@ -110,11 +110,15 @@ int main()
     intptr_t last_node = (intptr_t) NULL;
     for (int c = LIST_START; c < LIST_END; ++c) {
         xorlist_t *new_node = malloc(sizeof(xorlist_t));
-        *pt = (xorlist_t){.data = c, .link = (intptr_t) new_node ^ last_node};
+        *pt = (xorlist_t) {
+            .data = c, .link = (intptr_t) new_node ^ last_node
+        };
         last_node = (intptr_t) pt;
         pt = new_node;
     }
-    *pt = (xorlist_t){.data = LIST_END, .link = last_node ^ (intptr_t) NULL};
+    *pt = (xorlist_t) {
+        .data = LIST_END, .link = last_node ^ (intptr_t) NULL
+    };
     tail = pt;
 
     insert_head(&head, 99);

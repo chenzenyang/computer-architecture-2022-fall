@@ -11,13 +11,13 @@ Assume that we are going to provide endian conversion functions/macros start wit
 */
 
 /*
-You shall provide the functioned implementations. 
-Both C01 and C02 are hexadecimal integer literals, meaning that they should start with 0x. C03, C04, C05, and C06 are C expressions. 
+You shall provide the functioned implementations.
+Both C01 and C02 are hexadecimal integer literals, meaning that they should start with 0x. C03, C04, C05, and C06 are C expressions.
 
 You might consider to call end_bswap32 function when it is necessary. You must obey the following rules when filling them:
 - Write shorter code as possible as you can.
 - Do necessary casting to eliminate compilation warnings.
-- Follow the consistent coding style. That is, we prefer end_bswap32(n) to end_bswap32( n ). 
+- Follow the consistent coding style. That is, we prefer end_bswap32(n) to end_bswap32( n ).
     Be aware of the spaces! Details determine success or failure.
 */
 

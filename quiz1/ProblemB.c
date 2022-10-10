@@ -1,5 +1,5 @@
 /*
-Fill in B01, B02, B03 and B04 to complete the reverse function which takes in a head to the head of a linked list and 
+Fill in B01, B02, B03 and B04 to complete the reverse function which takes in a head to the head of a linked list and
     returns a new copy of the linked list in reverse order.
 You must allocate space for the new linked list that you return. An (incomplete) example program using reverse is also shown below.
 */
